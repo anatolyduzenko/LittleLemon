@@ -13,7 +13,7 @@ class MenuViewTest(TestCase):
         self.item3 = Menu.objects.create(Title="Pasta", Price=10, Inventory=6)
 
     def test_get_all(self):
-        response = self.client.get(reverse('menu')) 
+        response = self.client.get(reverse('menu-items')) 
         menu_items = Menu.objects.all()
         serializer = MenuItemSerializer(menu_items, many=True)
 
